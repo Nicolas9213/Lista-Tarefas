@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Montserrat&display=swap');
+body {
+    font-family: var(--fonte-primaria);
+    background-color: blanchedalmond;
+    padding: 20px;
+    text-align: center;
+}
+:root{
+    --fonte-primaria: 'Cherry Bomb One', cursive;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+.modo-claro {
+    background-color: blanchedalmond;
+    color: black;
+}
+.modo-escuro {
+    background-color: #222;
+    color:#ccc;
+}
+#toggle {
+    margin-left: 10px;
+    padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 16px;
+    font-family: var(--fonte-secundaria);
+}
+#titulo {
+    font-size: 3rem;
+}
+#botao-adicionar {
+    margin-left: 10px;
+    padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 16px;
+    font-family: var(--fonte-secundaria);
+}
+#botao-adicionar:hover {
+    transition-duration: 1.5s ease;
+    transform: scale(1.2);
+    background-color: #aaa;
+    color: black;
+}
+#campo-tarefa {
+    border-radius: 16px;
+    width: 50%;
+    padding: 0.5%;
+    font-family: var(--fonte-secundaria);
+}
+
+#lista-tarefas {
+    margin-top: 20px;
+    list-style: none;
+    font-family: var(--fonte-secundaria);
+}
+
+
+.tarefa {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.concluida {
+    text-decoration: line-through;
+    color: #aaa;
+}
+.botao-excluir {
+    background-color: rgb(255, 183, 0);
+    color: rgb(0, 0, 0);
+}
