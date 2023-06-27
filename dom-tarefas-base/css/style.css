@@ -15,7 +15,7 @@ body {
 }
 .modo-escuro {
     background-color: #222;
-    color:#ccc;
+    color:#ffffff;
 }
 #toggle {
     margin-left: 10px;
@@ -70,7 +70,19 @@ body {
     text-decoration: line-through;
     color: #aaa;
 }
+li {
+    align-items: center;
+    display: flex;
+    border-radius: 16px;
+    border-style:dashed;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 0.5%;
+}
 .botao-excluir {
     background-color: rgb(255, 183, 0);
     color: rgb(0, 0, 0);
+    border-radius: 16px;
+    margin-left: 10%;
+    padding: 0.5%;
 }

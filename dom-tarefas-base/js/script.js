@@ -7,17 +7,45 @@ itensSalvos.forEach(adicionarItemNaLista);
 
 botaoAdicionar.addEventListener('click', function() {
     let nomeItem = campoTarefa.value;
-    adicionarItemNaLista(nomeItem);
 
+    if (nomeItem == "") {
+        nomeItem = "Vazio";
+    }
+    adicionarItemNaLista(nomeItem);
     itensSalvos.push(nomeItem);
     localStorage.setItem('itens', JSON.stringify(itensSalvos));
     inputItem.value = '';
 })
 
+campoTarefa.addEventListener('keyup', function(enter) {
+    if(enter.key === "Enter") {
+    let nomeItem = campoTarefa.value;
+
+    if (nomeItem == "") {
+        nomeItem = "Vazio";
+    }
+    adicionarItemNaLista(nomeItem);
+    itensSalvos.push(nomeItem);
+    localStorage.setItem('itens', JSON.stringify(itensSalvos));
+    inputItem.value = '';
+    }
+})
+
 function adicionarItemNaLista(nomeItem) {
-    let itemLista = document.createElement('li');
-    itemLista.innerText = nomeItem;
-    listaTarefas.appendChild(itemLista);
+    let novaTarefa = document.createElement('li');
+    novaTarefa.innerText = nomeItem;
+    listaTarefas.appendChild(novaTarefa);
+
+    let botaoExcluir = document.createElement("button");
+    botaoExcluir.innerText = "Remover";
+    novaTarefa.appendChild(botaoExcluir);
+    campoTarefa.value = "";
+    botaoExcluir.className = "botao-excluir";
+    botaoExcluir.addEventListener('click', function() {
+            listaTarefas.removeChild(novaTarefa);
+            itensSalvos.splice(itensSalvos.indexOf(nomeItem), 1);
+            localStorage.setItem('itens', JSON.stringify(itensSalvos));
+        })
 }
 
 let botaoToggle = document.getElementById('toggle');
@@ -33,9 +61,3 @@ botaoToggle.addEventListener('click', function() {
 
     localStorage.setItem('modo', document.body.className);
 })
-
-let botaoExcluir = document.createElement("button");
-botaoExcluir.innerText = "Remover";
-campoTarefa.appendChild(botaoExcluir);
-campoTarefa.value = "";
-botaoExcluir.className = "botao-excluir";
